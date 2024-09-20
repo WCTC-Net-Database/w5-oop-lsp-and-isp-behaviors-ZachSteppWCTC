@@ -2,7 +2,7 @@
 
 namespace W5_assignment_template.Models
 {
-    public class Goblin : IEntity
+    public class Goblin : IEntity, IThievish
     {
         public string Name { get; set; }
 
@@ -11,15 +11,16 @@ namespace W5_assignment_template.Models
             Console.WriteLine($"{Name} attacks {target.Name} with a terrifying shout.");
         }
 
-        public void Fly()
-        {
-            throw new NotImplementedException();
-        }
-
         public void Move()
         {
             Console.WriteLine($"{Name} moves aggressively.");
         }
+
+        public void StealFrom(IEntity target)
+        {
+            Console.WriteLine($"{Name} ransacks {target.Name}'s pockets.");
+        }
+
     }
 
 }
